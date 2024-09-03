@@ -1,22 +1,15 @@
 import React from 'react';
-import './App.css';
-
-// Section components
-import Header from './components/Header';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Landing from './components/landing';
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <About />
-      <Portfolio />
-      <Contact />
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Landing />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
