@@ -1,0 +1,12 @@
+git add .
+git commit -m "message"
+git push
+
+
+
+
+
+
+
+
+git : https://github.com/CHANDU32455/portfolio.git
