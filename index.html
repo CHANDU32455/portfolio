@@ -6,30 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="assets/css/styles.css">
-
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Portfolio website complete</title>
 </head>
 
-
-<!--===== SCROLL REVEAL =====-->
-<script src="https://unpkg.com/scrollreveal"></script>
-
-<!--===== MAIN JS =====-->
-<script src="assets/js/main.js"></script>
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
 <script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "cZ-dL1EQhvfDal88l",
-      });
-   })();
-   
-   function sendEmail() {
+    (function () {
+        emailjs.init({
+            publicKey: "cZ-dL1EQhvfDal88l",
+        });
+    })();
+
+    function sendEmail() {
         // Show loading state
         const button = document.querySelector('.contact__button');
         button.value = "Sending...";
@@ -70,13 +66,13 @@
 
         // Send email using EmailJS
         emailjs.send('service_n7jovgl', 'template_qogb93n', templateParams)
-            .then(function(response) {
+            .then(function (response) {
                 alert("Email successfully sent!");
                 // Clear form fields
                 document.getElementById('name').value = '';
                 document.getElementById('email').value = '';
                 document.getElementById('message').value = '';
-            }, function(error) {
+            }, function (error) {
                 alert("Failed to send email: " + error.text);
             })
             .finally(() => {
@@ -98,6 +94,7 @@
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#experience" class="nav__link">Experience</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
@@ -114,7 +111,7 @@
         <!--===== HOME =====-->
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Chandu</span><br> Web Designer</h1>
+                <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Chandu</span><br> Web Developer</h1>
 
                 <a href="#contact" class="button">Contact</a>
             </div>
@@ -146,6 +143,47 @@
                         build
                         robust full-stack applications, seamlessly integrating the front-end and back-end
                         for a powerful and efficient user experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--===== EXPERIENCE =====-->
+        <section id="experience">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="experience__container">
+                <div class="experience__content">
+                    <div class="experience__item">
+                        <div class="experience__circle"></div>
+                        <h3 class="experience__company">Intern Lead - CompSci Technology Solutions</h3>
+                        <p class="experience__duration">Apr 2024 - Sep 2024 | 3 months(Excluding Exams Time)</p>
+                        <p class="experience__role">Hyderabad, Telangana, India</p>
+                        <p class="experience__description">
+                            Gained hands-on experience in Django, React, API management using Django REST framework, and
+                            session
+                            management in a certificate generation project and Invoice Generation project.
+                        </p>
+                    </div>
+
+                    <div class="experience__item">
+                        <div class="experience__circle"></div>
+                        <h3 class="experience__company">Intern - Oasis Infobyte</h3>
+                        <p class="experience__duration">Nov 2023 - Dec 2023 | 2 months</p>
+                        <p class="experience__role">Naidupeta, Andhra Pradesh, India</p>
+                        <p class="experience__description">Designed webpages, landing pages, and a temperature converter
+                            application.</p>
+                    </div>
+
+                    <div class="experience__item">
+                        <div class="experience__circle"></div>
+                        <h3 class="experience__company">Intern - CodSoft</h3>
+                        <p class="experience__duration">Oct 2023 - Nov 2023 | 2 months</p>
+                        <p class="experience__role">Naidupeta, Andhra Pradesh, India</p>
+                        <p class="experience__description">
+                            Developed Python GUI applications and gained hands-on experience in error handling and
+                            debugging.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -222,34 +260,45 @@
 
             <div class="work__container bd-grid">
                 <a href="https://github.com/CHANDU32455/ebidding/tree/master" class="work__img">
-                    <img src="assets/img/Ebidding.png" alt="Ebidding">
+                    <img src="assets/img/—Pngtree—bidding and bidding charity auction_6701939.png" alt="Ebidding">
+                    <div class="overlay">Ebidding -- WebDev</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/OIBSIP" class="work__img">
-                    <img src="assets/img/temp_converter.png" alt="simple_temperature_converter">
+                    <img src="assets/img/Lovepik_com-380013323-temperature-hot-cold-thermometer.png"
+                        alt="simple_temperature_converter">
+                    <div class="overlay">Temperature Converter -- WebDev</div>
                 </a>
                 <a href="./sms.html" class="work__img">
-                    <img src="assets/img/students-3518726_1280.webp" alt="student_management_system_java">
+                    <img src="assets/img/46db631c9f230.png" alt="student_management_system_java">
+                    <div class="overlay">Student Management System -- java</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/my-work/tree/main/desktop_assistant" class="work__img">
                     <img src="assets/img/virtual_assistant.png" alt="Personal_Desktop_assistant">
+                    <div class="overlay">Personal Desktop Assistant -- Python</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/kivy" class="work__img">
                     <img src="assets/img/kivy_yt.png" alt="kivy_yt_vid_downloader">
+                    <div class="overlay">Kivy YouTube Audio-Video Downloader</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/flutter/tree/master" class="work__img">
-                    <img src="" alt="todo_in_flutter">
+                    <img src="assets/img/flutter todo.png" alt="todo_in_flutter">
+                    <div class="overlay">Flutter To-Do App</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/my-work/tree/main/musicplayer" class="work__img">
                     <img src="assets/img/vecteezy_color-music-free-illustration_22983477.png" alt="MusicPlayer">
+                    <div class="overlay">Music Player in python</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/CodeSoft/blob/main/phone%20book" class="work__img">
                     <img src="./assets/img/—Pngtree—phonebook icon design vector_3648176.png" alt="phonebook">
+                    <div class="overlay">Phonebook in python</div>
                 </a>
                 <a href="https://github.com/CHANDU32455/CodeSoft/blob/main/to%20do%20list.py" class="work__img">
                     <img src="./assets/img/—Pngtree—to do list icon cartoon_5080528.png" alt="todo in python">
+                    <div class="overlay">To-Do List in Python</div>
                 </a>
             </div>
         </section>
+
 
         <!--===== CONTACT =====-->
         <section class="contact section" id="contact">

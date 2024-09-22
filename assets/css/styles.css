@@ -218,6 +218,8 @@ img {
 }
 .home__blob-img {
   width: 360px;
+  height: auto;
+  clip-path: inset(0 round 20px); /* Adjust '20px' for more/less roundness */
 }
 
 /*BUTTONS*/
@@ -249,6 +251,99 @@ img {
   width: 200px;
   border-radius: 0.5rem;
 }
+
+/*===== EXPERIENCE SECTION =====*/
+/* General styling for experience section */
+#experience {
+  padding: 4rem 0;
+  background-color: white;
+}
+
+.experience__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+}
+
+.experience__container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.experience__content {
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+/* Experience item */
+.experience__item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Adjust spacing between items */
+}
+
+/* Circle indicators on the left */
+.experience__circle {
+  position: absolute;
+  left: -3.7rem; /* Adjust the horizontal position of the circle ---- used to change position*/
+  top: 50%; /* This centers the circle vertically within each item */
+  transform: translateY(-50%); /* Correct centering */
+  width: 20px; 
+  height: 20px; 
+  background-color: #007bff;
+  border-radius: 50%;
+  z-index: 1; /* Ensures the circle is above the line */
+}
+
+/* Vertical timeline line */
+.experience__content::before {
+  content: '';
+  position: absolute;
+  left: -0.6rem;
+  top: 6.5rem;    /* Adjust the vertical position of the line from top*/
+  bottom: 6.5rem; /* Adjust the vertical position of the line from bottom */
+  width: 2px;
+  background-color: #007bff;
+}
+
+/* Company title */
+.experience__company {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+/* Duration and role */
+.experience__duration, .experience__role {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+/* Description */
+.experience__description {
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .experience__container {
+      padding-left: 1rem;
+  }
+
+  .experience__circle {
+      left: -1.5rem;
+  }
+}
+
+
 
 /* ===== SKILLS =====*/
 .skills__container {
@@ -310,17 +405,46 @@ img {
 .work__container {
   row-gap: 2rem;
 }
+
 .work__img {
+  position: relative; /* Important for overlay positioning */
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   border-radius: 0.5rem;
   overflow: hidden;
 }
+
 .work__img img {
-  transition: 1s;
+  transition: transform 1s;
+  width: 100%; /* Ensure image takes full width of the container */
 }
-.work__img img:hover {
-  transform: scale(1.1);
+
+/* Overlay that appears on hover */
+.work__img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Gray color with transparency */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  text-align: center;
 }
+
+/* Show overlay and project name on hover */
+.work__img:hover .overlay {
+  opacity: 1;
+}
+
+.work__img:hover img {
+  transform: scale(1.1); /* Zoom-in effect */
+}
+
 
 /* ===== CONTACT =====*/
 .contact__input {
