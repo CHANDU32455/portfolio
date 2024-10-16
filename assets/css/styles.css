@@ -245,8 +245,6 @@ img {
 
   .home__img {
     order: 2; /* Position the image below the heading */
-    margin-top: 2rem; /* Add space above the image */
-    margin-bottom: 1.5rem; /* Add gap below the image */
     width: 90%; /* Make the image more responsive */
   }
 
