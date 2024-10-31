@@ -1,0 +1,643 @@
+.portfolio-website {
+    height: 200vh; /* Total height for demonstration */
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
+    color: #fff;
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 1rem; /* Adjusted padding */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
+}
+
+.navbar-logo {
+    margin-right: 20px; /* Space between logo and links */
+}
+
+.navbar-logo img {
+    height: 40px; /* Adjust logo height */
+    width: 40px; /* Set width for the circular shape */
+    border-radius: 50%; /* Make the logo circular */
+    object-fit: cover; /* Ensure the image covers the circle */
+}
+
+.navbar-container {
+    display: flex; /* Use flexbox to align links */
+    gap: 15px; /* Space between navbar items */
+}
+
+.navbar-item {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #fff; /* White text color */
+    padding: 0.5rem 1rem; /* Add padding for clickable area */
+    transition: color 0.3s ease; /* Transition for hover effect */
+}
+
+.navbar-item:hover {
+    color: #f39c12; /* Change color on hover for emphasis */
+}
+
+.show {
+    transform: translateY(0);
+}
+
+.hide {
+    transform: translateY(-100%);
+}
+
+.content {
+    padding-top: 60px; /* Space for the fixed navbar */
+}
+
+section {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background-color: #161515; /* Dark background for sections */
+    color: #fff; /* White text color for sections */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.home-section {
+    background-image: url('https://w0.peakpx.com/wallpaper/314/578/HD-wallpaper-dark-bg-bg-wp-abstract-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    text-align: left;
+    position: relative;
+    padding-left: 5%;
+}
+/* From Uiverse.io by barisdogansutcu */ 
+.connectnow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 10px;
+    color: white;
+    text-shadow: 2px 2px rgb(116, 116, 116);
+    text-transform: uppercase;
+    cursor: pointer;
+    border: solid 2px black;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: hsl(49deg 98% 60%);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .connectnow:active {
+    transform: scale(0.9);
+    transition: all 100ms ease;
+  }
+  
+  .connectnow svg {
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .connect {
+    transition: all 0.5s ease;
+    transition-delay: 300ms;
+    font-size: 15px;
+  }
+  
+  .connectnow:hover svg {
+    transform: scale(3) translate(50%);
+  }
+  
+  .now {
+    position: absolute;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  
+  .connectnow:hover .now {
+    transform: translateX(10px);
+    transition-delay: 300ms;
+  }
+  
+  .connectnow:hover .connect {
+    transform: translateX(200%);
+    transition-delay: 300ms;
+  }
+  
+.overlay {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    padding: 3rem 2rem; /* Moderate padding for spacing */
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.overlay h1 {
+    font-size: 3rem; /* Smaller heading */
+    margin-bottom: 0.5rem;
+}
+
+.overlay h2 {
+    font-size: 2.5rem; /* Smaller subheading */
+    margin-bottom: 1rem;
+}
+
+.overlay p {
+    font-size: 1.2rem; /* Reduced paragraph text */
+    margin-bottom: 1.5rem;
+}
+
+.overlay .btn {
+    font-size: 1rem; /* Appropriately sized button */
+    padding: 0.6rem 1.5rem;
+    margin-top: 1rem;
+}
+
+/* portfolio.css */
+
+.about-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: #161515; /* Dark background */
+  color: #fff;
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+
+.about-image {
+  position: relative;
+  flex: 0 0 50%;
+}
+
+.about-image img {
+  width: 400px;
+  height: 470px; /* Increased height for a longer image */
+  border-radius: 10px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+  object-position: center;
+  transform: translateX(80px); /* Shift image slightly right */
+}
+
+.about-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .about-image img {
+      width: 80%;
+      max-width: 400px;
+      height: auto;
+      transform: none; /* Remove right shift on smaller screens */
+  }
+}
+
+/* experience.css */
+.experience-section {
+  display: flex;
+  padding: 5rem 3rem; /* Increased padding for a larger section */
+  color: #fff;
+  background-color: #1e1e1e;
+  position: relative; /* Makes sure that .timeline is scoped to this section */
+}
+
+.experience-section .timeline {
+  position: absolute; /* Positioned relative to the .experience-section */
+  left: 6rem;
+  top: 20%;
+  height: 60%;
+  width: 5px;
+  background-color: #f39c12;
+}
+
+.experience-section .ball {
+  position: absolute;
+  left: -9px;
+  width: 20px;
+  height: 20px;
+  background-color: #f39c12;
+  border-radius: 50%;
+  transition: top 0.2s ease;
+}
+
+.experience-container {
+  margin-left: 6rem; /* Increased margin for more space */
+  display: flex;
+  flex-direction: column;
+  width: 70%; /* Increased width for larger container */
+}
+
+.experience-item {
+  background-color: #2a2a2a;
+  margin: 2rem 0; /* Increased margin for better spacing between items */
+  padding: 2rem; /* Larger padding for more content space */
+  border-radius: 10px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.experience-period {
+  font-size: 1.2rem; /* Slightly increased font size */
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.experience-item h3 {
+  font-size: 2rem; /* Larger main heading */
+  margin: 0.6rem 0;
+}
+
+.experience-item h4 {
+  font-size: 1.4rem; /* Slightly increased sub-heading */
+  margin: 0.4rem 0;
+  color: #ccc;
+}
+
+.experience-item p {
+  font-size: 1.1rem; /* Increased paragraph font size */
+  color: #b2b2b2;
+}
+
+
+.skills-section {
+  padding: 5rem 2rem;
+  color: #fff;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-left: 6%;
+}
+
+.skills-description {
+  flex: 1 1 45%; /* Ensures width adjusts responsively */
+  min-width: 300px;
+}
+
+.skills-subtitle {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.skills-text {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #b2b2b2;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.skill-name {
+  flex: 1;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.skill-bar {
+  height: 10px;
+  border-radius: 5px;
+  background-color: #f39c12;
+  margin: 0 1rem;
+  width: 0;
+  transition: width 1s ease;
+}
+
+.skill-percentage {
+  font-weight: bold;
+  color: #f39c12;
+  min-width: 3rem;
+  text-align: right;
+}
+.image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.skills-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  min-width: 300px;
+  margin-top: 2rem; /* Small margin as default */
+}
+
+/* Media query for larger screens */
+@media (min-width: 769px) {
+  .skills-image {
+    margin-top: 8rem; /* Adds balanced space above image for larger screens */
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .skills-description, .skills-image {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .skills-subtitle, .skills-text, .skill-name, .skill-percentage {
+    text-align: center;
+  }
+
+  .skills-image {
+    margin-top: 0; /* Ensures no additional margin for small screens */
+  }
+}
+.projects-section {
+  padding: 40px 20px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+
+.projects-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff; /* Update to a lighter color for contrast */
+  text-align: center;
+}
+
+/* Container for project items */
+.projects-section .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between items */
+}
+
+/* Individual project item styling */
+.projects-section .project-item {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  height: 250px; /* Set a fixed height for consistency */
+}
+
+/* Smooth overlay fill effect */
+.projects-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Smooth fade */
+}
+
+/* Show overlay on hover */
+.projects-section .project-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Scale up project item on hover */
+.projects-section .project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.projects-section .work__img img {
+  width: 100%;
+  height: 100%; /* Ensure it covers the entire tile height */
+  object-fit: cover; /* Ensures images cover the div without distortion */
+}
+
+/* Overlay content styling */
+.projects-section .overlay-content {
+  text-align: center;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .projects-section .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-section .project-item {
+    width: 90%;
+  }
+}
+
+
+
+.contact-section {
+  background-color: #272626; /* Light background */
+  padding: 40px 20px; /* Padding around the section */
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: space-between; /* Space between content and form */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.contact__content {
+  flex: 1; /* Allow this section to grow */
+  margin-right: 20px; /* Space between content and form */
+}
+
+.contact__container {
+  background-color: #1e1e1e;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 30px;
+  max-width: 500px; /* Maximum width of the form */
+  width: 100%; /* Full width on smaller screens */
+}
+
+.contact__description {
+  text-align: left;
+  font-size: 20px;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Spacing between form groups */
+}
+
+.label {
+  margin-bottom: 8px; /* Spacing below label */
+  color: #333; /* Darker text color for readability */
+}
+
+.contact__input {
+  width: 90%; /* Full width input */
+  padding: 12px; /* Padding inside input fields */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners for inputs */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.contact__input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.contact__button {
+  width: 50%; /* Width of the button */
+  padding: 12px 20px; /* Padding for button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners for button */
+  background-color: #007bff; /* Blue background */
+  color: #ffffff; /* White text */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for background color and scale */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center the button text */
+  align-items: center; /* Center the button text vertically */
+  margin: 0 auto; /* Center the button horizontally */
+}
+
+/* Button Hover Effects */
+.contact__button:hover {
+  background-color: #00b39b; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button Active Effects */
+.contact__button:active {
+  transform: scale(0.95); /* Slightly shrink button when clicked */
+}
+
+.error-message,
+.success-message {
+  margin-top: 15px; /* Margin above messages */
+  padding: 10px; /* Padding inside messages */
+  border-radius: 4px; /* Rounded corners for messages */
+  color: #ffffff; /* White text for messages */
+}
+
+.error-message {
+  background-color: #dc3545; /* Red background for errors */
+}
+
+.success-message {
+  background-color: #28a745; /* Green background for success messages */
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column; /* Stack sections vertically */
+    align-items: center; /* Center items */
+  }
+
+  .contact__content {
+    margin-right: 0; /* Remove margin on mobile */
+    margin-bottom: 20px; /* Space below content */
+  }
+
+  .contact__container {
+    max-width: 100%; /* Allow full width on mobile */
+    padding: 20px; /* Adjust padding */
+  }
+
+  .contact__description {
+    font-size: 18px; /* Smaller font size on mobile */
+  }
+
+  .contact__button {
+    width: 100%; /* Full width button on mobile */
+  }
+}

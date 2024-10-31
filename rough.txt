@@ -1,0 +1,166 @@
+cd ..
+./env/scripts/activate
+cd portfolio
+npm start
+
+
+import React from 'react';
+import mypic from '../assets/mypic.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+const PortfolioWebsite = () => {
+  return (
+    <div className="container my-5">
+      <header className="d-flex justify-content-between align-items-center mb-5">
+        <div>
+          <h1 className="display-4">Hi,</h1>
+          <h2 className="display-5 text-primary">I'm Chandu</h2>
+          <h3 className="h5 text-muted">Web Developer</h3>
+          <button className="btn btn-primary mt-3">Contact</button>
+        </div>
+        <img src={mypic} alt="Chandu" className="rounded-circle shadow-lg" style={{ width: '150px', height: '150px' }} />
+      </header>
+
+      <main>
+        <section className="mb-5">
+          <h2 className="h4 font-weight-bold mb-4">About</h2>
+          <div className="row">
+            <div className="col-md-4">
+              <img src="https://via.placeholder.com/300x400" alt="Chandu full" className="img-fluid rounded-lg shadow-md" />
+            </div>
+            <div className="col-md-8">
+              <p className="lead">
+                I am Chandu, a passionate and creative Web Developer with a strong foundation in frontend and backend technologies. I specialize in creating responsive and user-friendly web applications using modern frameworks and libraries. My expertise includes HTML, CSS, JavaScript, React, and Node.js. I'm always eager to learn new technologies and apply them to solve real-world problems.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-5">
+          <h2 className="h4 font-weight-bold mb-4">Experience</h2>
+          <ul className="list-unstyled">
+            {[
+              {
+                title: 'Intern Lead - CompSci Technology Solutions',
+                date: 'Apr 2023 - May 2023',
+                location: 'Coimbatore, Tamil Nadu, India',
+                description: 'Responsibilities included leading intern teams, managing web development projects, and ensuring timely delivery of high-quality solutions.',
+              },
+              {
+                title: 'Intern - Oasis Infobyte',
+                date: 'Nov 2022 - Dec 2022',
+                location: 'Remote',
+                description: 'Worked on various web development projects and gained hands-on experience with modern web technologies.',
+              },
+              {
+                title: 'Intern - CodSoft',
+                date: 'Oct 2022 - Nov 2022',
+                location: 'Remote',
+                description: 'Contributed to the development of web applications and improved coding skills through practical projects.',
+              },
+            ].map((job, index) => (
+              <li key={index} className="mb-4">
+                <h3 className="h5 font-weight-semibold">{job.title}</h3>
+                <p className="text-muted">{job.date} | {job.location}</p>
+                <p>{job.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mb-5">
+          <h2 className="h4 font-weight-bold mb-4">Skills</h2>
+          <div className="row">
+            <div className="col-md-6">
+              <h3 className="h5 font-weight-semibold">Professional Skills</h3>
+              <ul className="list-unstyled">
+                {[
+                  { skill: 'React', level: '95%' },
+                  { skill: 'Node.js', level: '85%' },
+                  { skill: 'JavaScript', level: '90%' },
+                ].map((item, index) => (
+                  <li key={index} className="mb-3">
+                    <span className="font-weight-bold">{item.skill}</span>
+                    <div className="progress">
+                      <div className="progress-bar bg-primary" role="progressbar" style={{ width: item.level }} aria-valuenow={parseInt(item.level)} aria-valuemin="0" aria-valuemax="100">
+                        {item.level}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="col-md-6">
+              <img src="https://via.placeholder.com/400x250" alt="Coding" className="img-fluid rounded-lg shadow-md" />
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-5">
+          <h2 className="h4 font-weight-bold mb-4">Work</h2>
+          <div className="row">
+            {[...Array(9)].map((_, index) => (
+              <div className="col-md-4 mb-4" key={index}>
+                <img src={`https://via.placeholder.com/300x200?text=Project+${index + 1}`} alt={`Project ${index + 1}`} className="img-fluid rounded-lg shadow-md hover-shadow" />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="h4 font-weight-bold mb-4">Contact</h2>
+          <form>
+            <div className="form-group">
+              <input type="text" placeholder="Name" className="form-control" required />
+            </div>
+            <div className="form-group">
+              <input type="email" placeholder="Email" className="form-control" required />
+            </div>
+            <div className="form-group">
+              <textarea placeholder="How can I help you?" className="form-control" rows="4" required></textarea>
+            </div>
+            <button type="submit" className="btn btn-primary">Contact Me</button>
+          </form>
+        </section>
+      </main>
+
+      <footer className="text-center mt-5">
+        <p>© 2024 Chandu Chitteti</p>
+        <div className="d-flex justify-content-center mt-3">
+          {[
+            {
+              icon: (
+                <svg className="bi bi-facebook" width="24" height="24" fill="currentColor">
+                  <path d="M22.5 0h-21A1.5 1.5 0 0 0 0 1.5v21A1.5 1.5 0 0 0 1.5 24h21a1.5 1.5 0 0 0 1.5-1.5V1.5A1.5 1.5 0 0 0 22.5 0zm-2.29 24h-3.49v-9.28h-2.98V24h-3.48V12h3.48v3.44h2.98V12h3.49v12z" />
+                </svg>
+              ),
+              link: '#',
+            },
+            {
+              icon: (
+                <svg className="bi bi-twitter" width="24" height="24" fill="currentColor">
+                  <path d="M23.954 4.569c-.885.392-1.83.656-2.825.775a4.933 4.933 0 0 0 2.163-2.723 9.863 9.863 0 0 1-3.127 1.197 4.918 4.918 0 0 0-8.4 4.482A13.947 13.947 0 0 1 1.64 3.15a4.916 4.916 0 0 0 1.523 6.569 4.89 4.89 0 0 1-2.224-.616v.062a4.918 4.918 0 0 0 3.946 4.814 4.945 4.945 0 0 1-2.212.085 4.928 4.928 0 0 0 4.604 3.417A9.867 9.867 0 0 1 0 19.54a13.935 13.935 0 0 0 7.548 2.212c9.058 0 14.004-7.493 14.004-13.973 0-.213-.005-.426-.014-.637A10.063 10.063 0 0 0 24 4.557a9.849 9.849 0 0 1-2.846.775z" />
+                </svg>
+              ),
+              link: '#',
+            },
+            {
+              icon: (
+                <svg className="bi bi-linkedin" width="24" height="24" fill="currentColor">
+                  <path d="M0 1.146C0 .513.447 0 1 0h22c.553 0 1 .513 1 1.146v21.708c0 .633-.447 1.146-1 1.146H1c-.553 0-1-.513-1-1.146V1.146zM8.187 21.696h-3.42V9.528h3.42v12.168zM6.465 8.637c-1.096 0-1.988-.897-1.988-2.01 0-1.116.892-2.014 1.988-2.014 1.096 0 1.988.898 1.988 2.014 0 1.113-.892 2.01-1.988 2.01zm15.797 13.059h-3.419v-6.305c0-1.556-.028-3.558-2.166-3.558-2.173 0-2.51 1.698-2.51 3.44v6.424h-3.42V9.528h3.29v1.648h.045c.458-.867 1.576-1.789 3.238-1.789 3.46 0 4.102 2.283 4.102 5.243v6.066z" />
+                </svg>
+              ),
+              link: '#',
+            },
+          ].map((social, index) => (
+            <a key={index} href={social.link} className="mx-2">
+              {social.icon}
+            </a>
+          ))}
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default PortfolioWebsite;

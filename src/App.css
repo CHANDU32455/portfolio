@@ -1,0 +1,183 @@
+/* Base styles */
+:root {
+  --primary-color: #f39c12;
+  --secondary-color: #e67e22;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --description-color: #bdbdbd;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Main landing container */
+.landing-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  padding: 0 10%; /* Horizontal padding */
+  background-color: var(--background-color); /* Apply background color */
+}
+
+/* Landing content styles */
+.landing-content {
+  max-width: 50%;
+}
+
+.landing-title {
+  font-size: 48px; /* Title font size */
+  margin-bottom: 10px; /* Space below title */
+  color: var(--primary-color); /* Primary color */
+}
+
+.landing-subtitle {
+  font-size: 36px; /* Subtitle font size */
+  color: var(--secondary-color); /* Secondary color */
+  margin-bottom: 20px; /* Space below subtitle */
+}
+
+.landing-description {
+  font-size: 18px; /* Description font size */
+  line-height: 1.6; /* Line height for readability */
+  margin-bottom: 20px; /* Space below description */
+  color: var(--description-color); /* Description color */
+}
+
+/* Button styles */
+.landing-button {
+  padding: 12px 24px; /* Button padding */
+  background-color: var(--primary-color); /* Button background */
+  color: var(--background-color); /* Button text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 18px; /* Button font size */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition effects */
+}
+
+.landing-button:hover {
+  background-color: var(--secondary-color); /* Change background on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Image box styles */
+.landing-image {
+  max-width: 50%; /* Maximum width for image box */
+  display: flex;
+  justify-content: center; /* Center the image */
+}
+
+.landing-image img {
+  border-radius: 15px; /* Rounded image corners */
+  max-width: 100%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow for image */
+}
+
+/* From Uiverse.io by alexmaracinaru */
+.cta {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white; /* Set text color to white */
+}
+
+.cta span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 14px;
+  padding-right: 15px;
+  text-transform: uppercase;
+  color: white; /* Set text color to white */
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+  fill: white; /* Set SVG fill color to white */
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: white; /* Set underline animation color to white */
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff; /* Set underline color to white */
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Resume button specific styles */
+.resume-button {
+  position: absolute; /* Use absolute positioning for the top right corner */
+  top: 20px; /* Adjust this value to move it down or up */
+  right: 20px; /* Adjust this value to move it left or right */
+  background-color: transparent; /* Keep background transparent */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+/* Smaller screens layout */
+@media (max-width: 800px) {
+  .landing-container {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center text */
+    padding: 0 5%; /* Adjust padding for smaller screens */
+  }
+
+  .landing-content {
+    order: 1; /* Content box order */
+    max-width: 100%; /* Full width on small screens */
+  }
+
+  .landing-image {
+    order: 2; /* Image box order */
+    margin-top: 20px; /* Space above image */
+    margin-bottom: 30px; /* Space below image */
+    max-width: 100%; /* Full width for image */
+  }
+
+  .landing-button {
+    order: 3; /* Button box order */
+    margin-bottom: 30px; /* Space below button */
+    text-align: center; /* Center align button */
+  }
+}
+
+/* Cursor animation */
+.cursor {
+  animation: blink 1s steps(1) infinite; /* Blinking effect */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
