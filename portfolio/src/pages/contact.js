@@ -8,14 +8,13 @@ const Contact = () => {
         email: '',
         message: '',
     });
-
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
     useEffect(() => {
-        // Initialize EmailJS with your user ID
-        emailjs.init("cZ-dL1EQhvfDal88l"); // Replace with your EmailJS User ID
+        // Initialize EmailJS with your user ID from the .env file
+        emailjs.init(process.env.REACT_APP_EMAILJS_USER_ID);
     }, []);
 
     const handleChange = (e) => {
@@ -58,72 +57,77 @@ const Contact = () => {
         };
 
         // Send email using EmailJS
-        emailjs.send('service_n7jovgl', 'template_qogb93n', templateParams)
-            .then((response) => {
-                alert("Email successfully sent!");
-                // Clear form fields
-                setFormData({ name: '', email: '', message: '' });
-            })
-            .catch((error) => {
-                alert("Failed to send email: " + error.text);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
+        emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            templateParams
+        )
+        .then((response) => {
+            alert("Email successfully sent!");
+            // Clear form fields
+            setFormData({ name: '', email: '', message: '' });
+        })
+        .catch((error) => {
+            alert("Failed to send email: " + error.text);
+        })
+        .finally(() => {
+            setLoading(false);
+        });
     };
 
     return (
         <section id='contact' className="contact-section">
-        <div className="contact__content">
-          <h2>Let's Connect!</h2>
-          <p className="contact__description">
-          I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out.
-          Connecting with people is what fuels my passion, and I believe every conversation is an opportunity to learn and grow. So don’t hesitate—drop me a message, and let’s start a conversation!          </p>
-        </div>
-        <div className="contact__container">
-          <form className="contact__form" onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Name:</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="contact__input"
-                required
-              />
+            <div className="contact__content">
+                <h2>Let's Connect!</h2>
+                <p className="contact__description">
+                    I’d love to hear from you! Whether you have a question, feedback, or just want to say hello, feel free to reach out.
+                    Connecting with people is what fuels my passion, and I believe every conversation is an opportunity to learn and grow. So don’t hesitate—drop me a message, and let’s start a conversation!
+                </p>
             </div>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="contact__input"
-                required
-              />
+            <div className="contact__container">
+                <form className="contact__form" onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="name">Name:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="contact__input"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="contact__input"
+                            required
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="message">Message:</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            className="contact__input"
+                            required
+                        />
+                    </div>
+                    <button type="submit" className="contact__button" disabled={loading}>
+                        {loading ? 'Sending...' : 'Send Message'}
+                    </button>
+                </form>
+                {error && <p className="error-message">{error}</p>}
+                {success && <p className="success-message">{success}</p>}
             </div>
-            <div className="form-group">
-              <label htmlFor="message">Message:</label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="contact__input"
-                required
-              />
-            </div>
-            <button type="submit" className="contact__button" disabled={loading}>
-              {loading ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
-          {error && <p className="error-message">{error}</p>}
-          {success && <p className="success-message">{success}</p>}
-        </div>
         </section>
     );
 };
