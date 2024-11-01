@@ -1,28 +1,29 @@
 import React from 'react';
-import { FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Importing Font Awesome icons
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
     const footerStyle = {
-        backgroundColor: '#343a40', // Dark background
-        color: '#ffffff', // White text
-        padding: '40px 20px', // Padding
-        textAlign: 'center' // Centered text
+        backgroundColor: '#343a40',
+        color: '#ffffff',
+        padding: '40px 20px',
+        textAlign: 'center'
     };
 
     const iconStyle = {
-        margin: '0 10px', // Margin around icons
-        color: '#ffffff', // Icon color
-        fontSize: '24px' // Icon size
+        margin: '0 10px',
+        color: '#ffffff',
+        fontSize: '24px'
     };
 
     const copyStyle = {
-        marginTop: '20px', // Margin above copyright text
+        marginTop: '20px',
     };
 
     return (
         <footer style={footerStyle}>
             <h5 className="footer__title mb-3">Chandu Chitteti</h5>
             <div className="footer__social mb-3">
+                {/* External link for GitHub */}
                 <a
                     href="https://github.com/CHANDU32455"
                     style={iconStyle}
@@ -31,14 +32,8 @@ const Footer = () => {
                 >
                     <FaGithub />
                 </a>
-                <a
-                    href="#"
-                    style={iconStyle}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <FaInstagram />
-                </a>
+
+                {/* External link for LinkedIn */}
                 <a
                     href="https://www.linkedin.com/in/chandu-chitteti-081116270/"
                     style={iconStyle}
@@ -46,6 +41,16 @@ const Footer = () => {
                     rel="noopener noreferrer"
                 >
                     <FaLinkedin />
+                </a>
+
+                {/* External link for Email */}
+                <a
+                    href="mailto:chanduchitteti@outlook.com"
+                    style={iconStyle}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <FaEnvelope />
                 </a>
             </div>
             <p style={copyStyle} className="footer__copy mb-0">&copy; 2024. All rights reserved.</p>

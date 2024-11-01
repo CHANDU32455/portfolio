@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './portfolio.css';
 import logo from '../assets/logo.jpg';
 import about from '../assets/about.jpeg';
@@ -11,7 +11,7 @@ const PortfolioWebsite = () => {
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         const navbar = document.querySelector('.navbar');
         if (navbar) {
             if (window.scrollY > lastScrollY) {
@@ -21,14 +21,15 @@ const PortfolioWebsite = () => {
             }
             setLastScrollY(window.scrollY);
         }
-    };
+    }, [lastScrollY]);
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [lastScrollY]);
+    }, [handleScroll]); // Adding handleScroll as a dependency
+    
 
     return (
         <div className="portfolio-website">
@@ -51,7 +52,7 @@ const PortfolioWebsite = () => {
                         <h1>Hi, I'm Chandu</h1>
                         <h2>I'M A WEB DEVELOPER </h2>
                         <p>I'm Chandu, a web developer skilled in React, Django, Flutter and desktop app development. I enjoy creating clean, responsive designs and building efficient applications that make a difference.</p>
-                        <button className='connectnow'>
+                        <button className='connectnow' onClick={() => window.open('https://www.linkedin.com/in/chandu-chitteti-081116270/', '_blank')}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 36 36"

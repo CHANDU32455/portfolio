@@ -1,6 +1,6 @@
-cd ..
+cd ../..
 ./env/scripts/activate
-cd portfolio
+cd portfolio/portfolio
 npm start
 
 

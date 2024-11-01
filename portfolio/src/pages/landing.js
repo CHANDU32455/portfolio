@@ -36,7 +36,7 @@ function Landing() {
 
     const typingInterval = setInterval(handleTyping, 150);
     return () => clearInterval(typingInterval);
-  }, [displayedText, isDeleting, currentTitleIndex]);
+  }, [displayedText, isDeleting, currentTitleIndex, titles]);
 
   const gotohome = () => {
     navigate('/portfolio');
