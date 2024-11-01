@@ -29,7 +29,7 @@ const PortfolioWebsite = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, [handleScroll]); // Adding handleScroll as a dependency
-    
+
 
     return (
         <div className="portfolio-website">

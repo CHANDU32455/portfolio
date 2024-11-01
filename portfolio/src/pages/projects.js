@@ -1,5 +1,7 @@
 import React, { memo } from 'react';
-import './portfolio.css'; // Ensure this file contains the necessary styles for your projects section
+import Card from '../components/card';
+import './portfolio.css';
+
 import ebidimg from '../assets/img/—Pngtree—bidding and bidding charity auction_6701939.png';
 import tempconimg from '../assets/img/Lovepik_com-380013323-temperature-hot-cold-thermometer.png';
 import pda from '../assets/img/virtual_assistant.png';
@@ -45,7 +47,7 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: 'Flutter To-Do App',
+      title: 'To-Do List',
       description: 'Flutter Project',
       imageUrl: flutter,
       liveDemoLink: 'https://github.com/CHANDU32455/flutter/tree/master',
@@ -53,7 +55,7 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: 'Music Player in Python',
+      title: 'Music Player',
       description: 'Python Project',
       imageUrl: musicplyrimg,
       liveDemoLink: 'https://github.com/CHANDU32455/my-work/tree/main/musicplayer',
@@ -61,7 +63,7 @@ const Projects = () => {
     },
     {
       id: 7,
-      title: 'Phonebook in Python',
+      title: 'Phonebook',
       description: 'Python Project',
       imageUrl: phonebook,
       liveDemoLink: 'https://github.com/CHANDU32455/CodeSoft/blob/main/phone%20book',
@@ -69,7 +71,7 @@ const Projects = () => {
     },
     {
       id: 8,
-      title: 'To-Do List in Python',
+      title: 'To-Do List',
       description: 'Python Project',
       imageUrl: todo,
       liveDemoLink: 'https://github.com/CHANDU32455/CodeSoft/blob/main/to%20do%20list.py',
@@ -79,29 +81,32 @@ const Projects = () => {
 
   return (
     <>
-    <section id='projects' className="projects-section">
-    <h2 className="section-title">Projects</h2>
-    </section>
-    <section className="projects-section">
-      <div className="projects-container">
-        {projectData.map((project) => (
-          <div className="project-item" key={project.id}>
-            <a href={project.liveDemoLink} className="work__img" target="_blank" rel="noopener noreferrer">
-              <img src={project.imageUrl} alt={project.title} loading="lazy" />
-              <div className="overlay">
-                <div className="overlay-content">
+          <section id='projects' className="projects-section">
+          <h2 className="section-title">Projects</h2>
+          </section>
+      <section id='projects' className="projects-section">
+        <div className="projects-container">
+          {projectData.map((project) => (
+            <a 
+              href={project.liveDemoLink} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              key={project.id}
+              className="project-link"
+            >
+              <Card 
+                frontImage={project.imageUrl} 
+                backContent={<>
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
-                </div>
-              </div>
+                </>} 
+              />
             </a>
-          </div>
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
     </>
   );
 };
 
-// Memoize the Projects component
 export default memo(Projects);

@@ -58,7 +58,11 @@ function Landing() {
         <p className="landing-description">
           I'm Chandu, a web developer skilled in React, Django, and desktop app development. I enjoy creating clean, responsive designs and building efficient applications that make a difference.
         </p>
-        <button className="landing-button" onClick={gotohome}>KNOW MORE ABOUT ME</button>
+        <button class="landing-button" onClick={gotohome}>
+          <div class="blob1"></div>
+          <div class="blob2"></div>
+          <div class="inner">Checkout My Portfolio</div>
+        </button>
       </div>
       <div className="landing-image">
         <img src={mypic} alt="Web Designer" />

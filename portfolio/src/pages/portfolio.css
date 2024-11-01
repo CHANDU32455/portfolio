@@ -187,7 +187,83 @@ header img {
     margin-top: 1rem;
 }
 
-/* portfolio.css */
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .home-section {
+      padding-left: 3%;
+  }
+
+  .overlay {
+      padding: 2rem 1.5rem; /* Reduce padding */
+      align-items: left; /* Center-align items */
+      text-align: left;
+  }
+
+  .overlay h1 {
+      font-size: 2rem; /* Reduce heading size */
+  }
+
+  .overlay h2 {
+      font-size: 1.8rem; /* Reduce subheading size */
+  }
+
+  .overlay p {
+      font-size: 1rem; /* Smaller paragraph text */
+  }
+
+  .overlay .btn {
+      font-size: 0.9rem;
+      padding: 0.5rem 1.2rem;
+  }
+
+  .connectnow {
+      font-size: 15px;
+      padding: 0.4rem 8px;
+      gap: 5px; /* Decrease spacing between items */
+  }
+
+  .connectnow .connect, .connectnow .now {
+      font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-section {
+      padding-left: 2%;
+      height: auto;
+      align-items: flex-start;
+  }
+
+  .overlay {
+      padding: 1.5rem 1rem;
+      align-items: center;
+      text-align: center;
+  }
+
+  .overlay h1 {
+      font-size: 1.8rem;
+  }
+
+  .overlay h2 {
+      font-size: 1.5rem;
+  }
+
+  .overlay p {
+      font-size: 0.9rem;
+  }
+
+  .overlay .btn {
+      font-size: 0.8rem;
+      padding: 0.4rem 1rem;
+  }
+
+  .connectnow {
+      font-size: 14px;
+      padding: 0.3rem 6px;
+      gap: 4px;
+  }
+}
+
 
 .about-me {
   display: flex;
@@ -320,6 +396,77 @@ header img {
   color: #b2b2b2;
 }
 
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .experience-section {
+    flex-direction: column; /* Stack items vertically */
+    padding: 2rem 1.5rem; /* Adjust padding */
+  }
+
+  .experience-section .timeline {
+    left: 1.5rem; /* Shift timeline closer to the left */
+    top: 10%;
+    height: 80%;
+  }
+
+  .experience-container {
+    margin-left: 2.5rem; /* Adjust left margin for more space */
+    width: 100%; /* Full width */
+  }
+
+  .experience-item {
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+  }
+
+  .experience-period {
+    font-size: 1rem; /* Decrease font size */
+  }
+
+  .experience-item h3 {
+    font-size: 1.5rem; /* Reduce main heading font size */
+  }
+
+  .experience-item h4 {
+    font-size: 1.2rem; /* Reduce sub-heading font size */
+  }
+
+  .experience-item p {
+    font-size: 1rem; /* Reduce paragraph font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-section .timeline {
+    left: 1rem; /* Closer to the edge */
+    height: 100%; /* Full height on mobile */
+  }
+
+  .experience-container {
+    margin-left: 1.5rem; /* Adjust for mobile */
+  }
+
+  .experience-item {
+    padding: 1rem; /* Smaller padding */
+  }
+
+  .experience-period {
+    font-size: 0.9rem; /* Further reduce font size */
+  }
+
+  .experience-item h3 {
+    font-size: 1.3rem; /* Smaller main heading */
+  }
+
+  .experience-item h4 {
+    font-size: 1rem; /* Smaller sub-heading */
+  }
+
+  .experience-item p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+}
+
 
 .skills-section {
   padding: 5rem 2rem;
@@ -429,6 +576,8 @@ header img {
     margin-top: 0; /* Ensures no additional margin for small screens */
   }
 }
+
+
 .projects-section {
   padding: 40px 20px;
   background-color: #1e1e1e;
@@ -442,12 +591,11 @@ header img {
   text-align: center;
 }
 
-/* Container for project items */
 .projects-section .projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 items per row */
   gap: 20px; /* Space between items */
+  justify-items: center;
 }
 
 /* Individual project item styling */
@@ -458,7 +606,8 @@ header img {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 300px;
+  width: 100%; /* Use full width within each grid column */
+  max-width: 300px; /* Optional max-width for consistency */
   height: 250px; /* Set a fixed height for consistency */
 }
 
@@ -502,16 +651,33 @@ header img {
 .projects-section .overlay-content {
   text-align: center;
 }
+/* Media queries for responsive design on smaller screens */
+@media (max-width: 1024px) {
+  .projects-section .projects-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on medium screens */
+  }
 
-/* Media queries for responsive design */
+  .projects-section .project-item {
+    width: 80%; /* Increased width for medium screens */
+    max-width: 350px; /* Optional max-width for larger cards */
+    height: 300px; /* Taller cards */
+    padding: 1.5rem; /* Additional padding for more content space */
+  }
+}
+
 @media (max-width: 768px) {
   .projects-section .projects-container {
+    grid-template-columns: 1fr; /* 1 item per row on small screens */
     flex-direction: column;
     align-items: center;
   }
 
   .projects-section .project-item {
-    width: 90%;
+    width: 95%; /* Make cards wider on small screens */
+    height: 350px; /* Increase height for more content space */
+    padding: 2rem; /* Extra padding for a spacious layout */
+    margin-bottom: 1.5rem; /* Space between each card */
+    font-size: 1.1rem; /* Increase font size for readability */
   }
 }
 
@@ -615,6 +781,33 @@ header img {
   background-color: #28a745; /* Green background for success messages */
 }
 
+/* Tablet Responsiveness */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-section {
+    flex-direction: row; /* Keep sections side-by-side on tablet */
+    align-items: flex-start; /* Align items to the top for a structured layout */
+  }
+
+  .contact__content {
+    margin-right: 20px; /* Add some margin between content sections */
+    margin-bottom: 0; /* Remove extra bottom margin */
+    width: 45%; /* Make content take up half the width */
+  }
+
+  .contact__container {
+    max-width: 90%; /* Slightly constrained width for balanced padding */
+    padding: 30px; /* Adjust padding for spacious layout */
+  }
+
+  .contact__description {
+    font-size: 20px; /* Moderate font size for readability */
+  }
+
+  .contact__button {
+    width: auto; /* Keep button size adaptable */
+    padding: 0.8rem 1.5rem; /* Adjust padding for comfort on tablet */
+  }
+}
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
@@ -624,7 +817,7 @@ header img {
   }
 
   .contact__content {
-    margin-right: 0; /* Remove margin on mobile */
+    margin-right: 10px; /* Remove margin on mobile */
     margin-bottom: 20px; /* Space below content */
   }
 
@@ -636,8 +829,12 @@ header img {
   .contact__description {
     font-size: 18px; /* Smaller font size on mobile */
   }
-
+  .contact__container {
+    margin: 10px; /* Increased margin for more space around the form */
+    padding: 20px; /* Optional padding inside the form for better spacing */
+    width: 90%; /* Make the form take up most of the screen width with space on the sides */
+  }
   .contact__button {
-    width: 100%; /* Full width button on mobile */
+    width: 60%; /* Full width button on mobile */
   }
 }
