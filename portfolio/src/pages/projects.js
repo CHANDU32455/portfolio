@@ -10,6 +10,7 @@ import flutter from '../assets/img/flutter todo.png';
 import phonebook from '../assets/img/—Pngtree—phonebook icon design vector_3648176.png';
 import todo from '../assets/img/—Pngtree—to do list icon cartoon_5080528.png';
 import musicplyrimg from '../assets/img/vecteezy_color-music-free-illustration_22983477.png';
+import vkeyboard from '../assets/img/vkeyboard.png';
 
 const Projects = () => {
   const projectData = [
@@ -77,6 +78,14 @@ const Projects = () => {
       liveDemoLink: 'https://github.com/CHANDU32455/CodeSoft/blob/main/to%20do%20list.py',
       githubLink: 'https://github.com/CHANDU32455/CodeSoft/blob/main/to%20do%20list.py'
     },
+    {
+      id:9,
+      title: 'Vkeyboard',
+      description: 'React Project',
+      imageUrl: vkeyboard,
+      liveDemoLink: 'https://github.com/CHANDU32455/react_django/tree/master',
+      githubLink: 'https://github.com/CHANDU32455/react_django/tree/master'
+    }
   ];
 
   return (
