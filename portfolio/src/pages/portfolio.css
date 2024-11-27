@@ -45,6 +45,35 @@
     color: #f39c12; /* Change color on hover for emphasis */
 }
 
+@media (max-width: 768px) {
+  .navbar {
+      padding: 0.8rem; /* Reduce padding */
+      justify-content: space-between; /* Space out logo and links */
+  }
+
+  .navbar-logo img {
+      height: 30px; /* Scale down the logo */
+      width: 30px;
+  }
+
+  .navbar-container {
+      gap: 10px; /* Reduce gap between navbar items */
+  }
+
+  .navbar-item {
+      font-size: 1rem; /* Reduce font size */
+      padding: 0.4rem 0.8rem; /* Adjust padding */
+  }
+
+  /* Optional: Stack items for more space */
+  .navbar-container {
+      flex-wrap: wrap; /* Allow items to wrap to the next line */
+      justify-content: center; /* Center items */
+      margin-right: 40px;
+  }
+}
+
+
 .show {
     transform: translateY(0);
 }
@@ -229,39 +258,41 @@ header img {
 
 @media (max-width: 480px) {
   .home-section {
-      padding-left: 2%;
-      height: auto;
-      align-items: flex-start;
-  }
+    padding-left: 3%;
+}
 
-  .overlay {
-      padding: 1.5rem 1rem;
-      align-items: center;
-      text-align: center;
-  }
+.overlay {
+    padding: 2rem 1.5rem; /* Reduce padding */
+    align-items: left; /* Center-align items */
+    text-align: left;
+}
 
-  .overlay h1 {
-      font-size: 1.8rem;
-  }
+.overlay h1 {
+    font-size: 2rem; /* Reduce heading size */
+}
 
-  .overlay h2 {
-      font-size: 1.5rem;
-  }
+.overlay h2 {
+    font-size: 1.8rem; /* Reduce subheading size */
+}
 
-  .overlay p {
-      font-size: 0.9rem;
-  }
+.overlay p {
+    font-size: 1rem; /* Smaller paragraph text */
+}
 
-  .overlay .btn {
-      font-size: 0.8rem;
-      padding: 0.4rem 1rem;
-  }
+.overlay .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+}
 
-  .connectnow {
-      font-size: 14px;
-      padding: 0.3rem 6px;
-      gap: 4px;
-  }
+.connectnow {
+    font-size: 15px;
+    padding: 0.4rem 8px;
+    gap: 5px; /* Decrease spacing between items */
+}
+
+.connectnow .connect, .connectnow .now {
+    font-size: 13px;
+}
 }
 
 
@@ -437,11 +468,16 @@ header img {
 }
 
 @media (max-width: 480px) {
-  .experience-section .timeline {
-    left: 1rem; /* Closer to the edge */
-    height: 100%; /* Full height on mobile */
+  .experience-section {
+    flex-direction: column; /* Stack items vertically */
+    padding: 2rem 1.5rem; /* Adjust padding */
   }
 
+  .experience-section .timeline {
+    left: 1.5rem; /* Shift timeline closer to the left */
+    top: 25%;
+    height: 60%;
+  }
   .experience-container {
     margin-left: 1.5rem; /* Adjust for mobile */
   }
@@ -545,14 +581,7 @@ header img {
   display: flex;
   justify-content: center;
   min-width: 300px;
-  margin-top: 2rem; /* Small margin as default */
-}
-
-/* Media query for larger screens */
-@media (min-width: 769px) {
-  .skills-image {
-    margin-top: 8rem; /* Adds balanced space above image for larger screens */
-  }
+  margin-top: 7rem;
 }
 
 /* Media query for smaller screens */
@@ -576,10 +605,66 @@ header img {
     margin-top: 0; /* Ensures no additional margin for small screens */
   }
 }
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 3rem 1rem; /* Adjust padding to provide more space */
+  }
 
+  .skills-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    text-align: left; /* Left align the text for the entire container */
+  }
+
+  .skills-description, .skills-image {
+    flex: 1;
+    max-width: 100%;
+    margin: 0; /* Remove margin */
+    text-align: left; /* Left align the text inside description */
+  }
+
+  .skills-subtitle {
+    font-size: 1.6rem; /* Slightly smaller subtitle */
+    margin-bottom: 0.8rem;
+  }
+
+  .skills-text {
+    font-size: 1rem; /* Smaller text size */
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .skill {
+    flex-direction: column; /* Stack skill name and progress bar */
+    align-items: flex-start;
+    margin: 1rem 0;
+  }
+
+  .skill-name {
+    font-size: 1.3rem; /* Smaller font size for skill name */
+    color: #fff;
+    margin-bottom: 0.5rem; /* Space between name and progress bar */
+  }
+
+  .skill-bar {
+    width: 100%; /* Full width bar for smaller screens */
+    margin: 0.5rem 0; /* Adjust spacing for small screens */
+  }
+
+  .skill-percentage {
+    font-size: 1rem; /* Smaller percentage text */
+    margin-top: 0.3rem;
+    text-align: left; /* Align percentage left for readability */
+  }
+
+  .image {
+    width: 100%;
+    max-width: 320px; /* Reduce max width for small screens */
+  }
+}
 
 .projects-section {
-  padding: 40px 20px;
   background-color: #1e1e1e;
   text-align: center;
 }

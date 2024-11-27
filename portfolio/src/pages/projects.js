@@ -11,7 +11,7 @@ import phonebook from '../assets/img/—Pngtree—phonebook icon design vector_3
 import todo from '../assets/img/—Pngtree—to do list icon cartoon_5080528.png';
 import musicplyrimg from '../assets/img/vecteezy_color-music-free-illustration_22983477.png';
 import vkeyboard from '../assets/img/vkeyboard.png';
-
+import pythonvkeyboard from '../assets/img/pythonvkeyboard.png';
 const Projects = () => {
   const projectData = [
     {
@@ -85,7 +85,15 @@ const Projects = () => {
       imageUrl: vkeyboard,
       liveDemoLink: 'https://github.com/CHANDU32455/react_django/tree/master',
       githubLink: 'https://github.com/CHANDU32455/react_django/tree/master'
-    }
+    },
+    {
+      id:10,
+      title: 'Vkeyboard',
+      description: 'Python Project',
+      imageUrl: pythonvkeyboard,
+      liveDemoLink: 'https://github.com/CHANDU32455/my-work/tree/main/virtual_keyboard(pyqt)',
+      githubLink: 'https://github.com/CHANDU32455/my-work/tree/main/virtual_keyboard(pyqt)'
+    },
   ];
 
   return (
