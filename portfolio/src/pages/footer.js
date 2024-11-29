@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaYoutube } from 'react-icons/fa';
 
 const Footer = () => {
     const footerStyle = {
@@ -51,6 +51,15 @@ const Footer = () => {
                     rel="noopener noreferrer"
                 >
                     <FaEnvelope />
+                </a>
+            
+                <a
+                    href="https://www.youtube.com/@Programming365"
+                    style={iconStyle}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <FaYoutube />
                 </a>
             </div>
             <p style={copyStyle} className="footer__copy mb-0">&copy; 2024. All rights reserved.</p>

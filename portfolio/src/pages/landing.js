@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import mypic from '../assets/mypic.jpg';
+import mypic from '../assets/mypic2.jpg';
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
+import '../css/landing.css';
 function Landing() {
   const titles = useMemo(() => [
     "WEB DESIGNER",
@@ -65,7 +65,7 @@ function Landing() {
         </button>
       </div>
       <div className="landing-image">
-        <img src={mypic} alt="Web Designer" />
+      <img style={{ maxWidth: "450px" }} src={mypic} alt="Web Designer" />
       </div>
     </main>
   );

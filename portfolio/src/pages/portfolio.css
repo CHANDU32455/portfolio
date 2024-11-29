@@ -2,90 +2,6 @@
     height: 200vh; /* Total height for demonstration */
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent background */
-    color: #fff;
-    display: flex;
-    align-items: center; /* Center items vertically */
-    padding: 1rem; /* Adjusted padding */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Add shadow for depth */
-}
-
-.navbar-logo {
-    margin-right: 20px; /* Space between logo and links */
-}
-
-.navbar-logo img {
-    height: 40px; /* Adjust logo height */
-    width: 40px; /* Set width for the circular shape */
-    border-radius: 50%; /* Make the logo circular */
-    object-fit: cover; /* Ensure the image covers the circle */
-}
-
-.navbar-container {
-    display: flex; /* Use flexbox to align links */
-    gap: 15px; /* Space between navbar items */
-}
-
-.navbar-item {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #fff; /* White text color */
-    padding: 0.5rem 1rem; /* Add padding for clickable area */
-    transition: color 0.3s ease; /* Transition for hover effect */
-}
-
-.navbar-item:hover {
-    color: #f39c12; /* Change color on hover for emphasis */
-}
-
-@media (max-width: 768px) {
-  .navbar {
-      padding: 0.8rem; /* Reduce padding */
-      justify-content: space-between; /* Space out logo and links */
-  }
-
-  .navbar-logo img {
-      height: 30px; /* Scale down the logo */
-      width: 30px;
-  }
-
-  .navbar-container {
-      gap: 10px; /* Reduce gap between navbar items */
-  }
-
-  .navbar-item {
-      font-size: 1rem; /* Reduce font size */
-      padding: 0.4rem 0.8rem; /* Adjust padding */
-  }
-
-  /* Optional: Stack items for more space */
-  .navbar-container {
-      flex-wrap: wrap; /* Allow items to wrap to the next line */
-      justify-content: center; /* Center items */
-      margin-right: 40px;
-  }
-}
-
-
-.show {
-    transform: translateY(0);
-}
-
-.hide {
-    transform: translateY(-100%);
-}
-
-.content {
-    padding-top: 60px; /* Space for the fixed navbar */
-}
-
 section {
     padding: 2rem;
     display: flex;
@@ -110,20 +26,6 @@ header img {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.home-section {
-    background-image: url('https://w0.peakpx.com/wallpaper/314/578/HD-wallpaper-dark-bg-bg-wp-abstract-dark.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: #fff;
-    text-align: left;
-    position: relative;
-    padding-left: 5%;
-}
 /* From Uiverse.io by barisdogansutcu */ 
 .connectnow {
     display: flex;
@@ -183,32 +85,59 @@ header img {
     transform: translateX(200%);
     transition-delay: 300ms;
   }
-  
+  .home-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    align-items: center;
+    background-image: url('../assets//mypic3.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    padding-left: 50px; /* Add some padding to give space from the edge */
+}
+
 .overlay {
-    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
-    padding: 3rem 2rem; /* Moderate padding for spacing */
-    width: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); /* Greyish overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: center; /* Vertically center the content */
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Ensure text alignment is left */
+    padding-left: 20px; /* Match padding to the section */
 }
 
-.overlay h1 {
-    font-size: 3rem; /* Smaller heading */
-    margin-bottom: 0.5rem;
-}
+.connectnow {
+    margin-top: 20px;
+    width: 169px;
+  }
+  /* Text styling */
+  .home-section .overlay h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 0px;
+  }
+  
+  .home-section .overlay h2 {
+    font-size: 1.8rem;
+    color: #fdd835;
+    margin-bottom: 0px;
+  }
+  
+  .home-section .overlay p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 600px;
+  }
 
-.overlay h2 {
-    font-size: 2.5rem; /* Smaller subheading */
-    margin-bottom: 1rem;
-}
-
-.overlay p {
-    font-size: 1.2rem; /* Reduced paragraph text */
-    margin-bottom: 1.5rem;
-}
 
 .overlay .btn {
     font-size: 1rem; /* Appropriately sized button */
@@ -265,6 +194,7 @@ header img {
     padding: 2rem 1.5rem; /* Reduce padding */
     align-items: left; /* Center-align items */
     text-align: left;
+    width: auto;
 }
 
 .overlay h1 {
@@ -766,10 +696,134 @@ header img {
   }
 }
 
+/* Blog Component Scoped Styles */
+.blog-section {
+  background-color: #1e1e1e; /* Dark theme */
+  color: #fff; /* Light text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  min-height: 100vh; /* Full viewport height */
+  box-sizing: border-box;
+}
+
+.blog-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+/* Text Content */
+.blog-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.blog-heading {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.blog-info {
+  font-size: 1.2rem;
+  color: #cccccc; /* Lighter text for readability */
+  line-height: 1.6;
+}
+
+.blog-btn {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  background-color: #007bff; /* Blue button */
+  max-width: 190px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.blog-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly enlarge */
+}
+
+/* Image Content */
+.blog-picture {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-picture img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-component {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .blog-details {
+      align-items: center;
+      text-align: center;
+  }
+
+  .blog-picture {
+      margin-top: 2rem;
+  }
+
+  .blog-heading {
+      font-size: 2rem;
+  }
+
+  .blog-info {
+      font-size: 1rem;
+  }
+
+  .blog-btn {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-heading {
+      font-size: 1.8rem;
+  }
+
+  .blog-info {
+      font-size: 0.9rem;
+  }
+
+  .blog-btn {
+      font-size: 0.8rem;
+      padding: 8px 16px;
+  }
+
+  .blog-picture img {
+      max-width: 100%; /* Fit the image to the smaller screen */
+  }
+}
 
 
 .contact-section {
-  background-color: #272626; /* Light background */
+  background-color: #272626;
   padding: 40px 20px; /* Padding around the section */
   display: flex; /* Flexbox for horizontal layout */
   justify-content: space-between; /* Space between content and form */
@@ -779,6 +833,7 @@ header img {
 .contact__content {
   flex: 1; /* Allow this section to grow */
   margin-right: 20px; /* Space between content and form */
+  margin-left: 20px;
 }
 
 .contact__container {
