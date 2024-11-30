@@ -18,9 +18,9 @@ function App() {
           <Route path="/resume" element={<Resume />} />
 
           <Route path='/blogs' element={<Bloglist/>} />
-          <Route path='/blogs/guide-to-installing-ubuntu-linux' element={<GuideToInstallingUbuntuLinux/>} />
-          <Route path='/blogs/getting-started-with-reactjs' element={<GettingStartedwithReactJS/>} />
-          <Route path='/blogs/mastering-css-grid-and-flexbox' element={<MasteringCssGridAndFlexbox/>} />
+          <Route path='/blogs/guide_to_installing_ubuntu_linux' element={<GuideToInstallingUbuntuLinux/>} />
+          <Route path='/blogs/getting_started_with_reactjs' element={<GettingStartedwithReactJS/>} />
+          <Route path='/blogs/mastering_css_grid_and_flexbox' element={<MasteringCssGridAndFlexbox/>} />
         </Routes>
       </div>
     </Router>
