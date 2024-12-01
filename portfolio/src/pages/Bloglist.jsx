@@ -7,21 +7,21 @@ const BlogList = () => {
       id: 1,
       title: "Guide to Installing Ubuntu Linux",
       description: "Learn how to install Ubuntu Linux by replacing Windows.",
-      link: "/blogs/guide_to_installing_ubuntu_linux",
+      link: "/blogs/guide-to-installing-ubuntu-linux",
     },
     {
       id: 2,
       title: "Getting Started with ReactJS",
       description:
         "An introductory guide to ReactJS, covering components, state, and props.",
-      link: "/blogs/getting_started_with_reactjs",
+      link: "/blogs/getting-started-with-reactjs",
     },
     {
       id: 3,
       title: "Mastering CSS Grid and Flexbox",
       description:
         "Learn how to create responsive and flexible layouts using CSS Grid and Flexbox.",
-      link: "/blogs/mastering_css_grid_and_flexbox",
+      link: "/blogs/mastering-css-grid-and-flexbox",
     },
     
   ];
