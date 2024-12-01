@@ -4,9 +4,9 @@ import Landing from './pages/landing';
 import PortfolioWebsite from './pages/portfolio';
 import Resume from './pages/resume';
 import Bloglist from './pages/Bloglist';
-import GuideToInstallingUbuntuLinux from './blogs/blog1';
-import GettingStartedwithReactJS from './blogs/blog2';
-import MasteringCssGridAndFlexbox from './blogs/blog3';
+import GuideToInstallingUbuntuLinux from './pages/blog1';
+import GettingStartedwithReactJS from './pages/blog2';
+import MasteringCssGridAndFlexbox from './pages/blog3';
 
 function App() {
   return (
